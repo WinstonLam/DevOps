@@ -6,7 +6,6 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from swagger_server.models.base_model_ import Model
-from swagger_server.models.grade_record import GradeRecord  # noqa: F401,E501
 from swagger_server import util
 
 
@@ -15,7 +14,7 @@ class Student(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, first_name: str=None, last_name: str=None, student_id: float=None, grade_record: GradeRecord=None):  # noqa: E501
+    def __init__(self, first_name: str=None, last_name: str=None, student_id: float=None, grade_records: List[object]=None):  # noqa: E501
         """Student - a model defined in Swagger
 
         :param first_name: The first_name of this Student.  # noqa: E501
@@ -24,26 +23,26 @@ class Student(Model):
         :type last_name: str
         :param student_id: The student_id of this Student.  # noqa: E501
         :type student_id: float
-        :param grade_record: The grade_record of this Student.  # noqa: E501
-        :type grade_record: GradeRecord
+        :param grade_records: The grade_records of this Student.  # noqa: E501
+        :type grade_records: List[object]
         """
         self.swagger_types = {
             'first_name': str,
             'last_name': str,
             'student_id': float,
-            'grade_record': GradeRecord
+            'grade_records': List[object]
         }
 
         self.attribute_map = {
             'first_name': 'first_name',
             'last_name': 'last_name',
             'student_id': 'student_id',
-            'grade_record': 'GradeRecord'
+            'grade_records': 'gradeRecords'
         }
         self._first_name = first_name
         self._last_name = last_name
         self._student_id = student_id
-        self._grade_record = grade_record
+        self._grade_records = grade_records
 
     @classmethod
     def from_dict(cls, dikt) -> 'Student':
@@ -120,30 +119,26 @@ class Student(Model):
         :param student_id: The student_id of this Student.
         :type student_id: float
         """
-        if student_id is None:
-            raise ValueError("Invalid value for `student_id`, must not be `None`")  # noqa: E501
 
         self._student_id = student_id
 
     @property
-    def grade_record(self) -> GradeRecord:
-        """Gets the grade_record of this Student.
+    def grade_records(self) -> List[object]:
+        """Gets the grade_records of this Student.
 
 
-        :return: The grade_record of this Student.
-        :rtype: GradeRecord
+        :return: The grade_records of this Student.
+        :rtype: List[object]
         """
-        return self._grade_record
+        return self._grade_records
 
-    @grade_record.setter
-    def grade_record(self, grade_record: GradeRecord):
-        """Sets the grade_record of this Student.
+    @grade_records.setter
+    def grade_records(self, grade_records: List[object]):
+        """Sets the grade_records of this Student.
 
 
-        :param grade_record: The grade_record of this Student.
-        :type grade_record: GradeRecord
+        :param grade_records: The grade_records of this Student.
+        :type grade_records: List[object]
         """
-        if grade_record is None:
-            raise ValueError("Invalid value for `grade_record`, must not be `None`")  # noqa: E501
 
-        self._grade_record = grade_record
+        self._grade_records = grade_records
