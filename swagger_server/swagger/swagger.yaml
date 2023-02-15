@@ -94,7 +94,6 @@ components:
   schemas:
     Student:
       required:
-      - GradeRecord
       - first_name
       - last_name
       - student_id
