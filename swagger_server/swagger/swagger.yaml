@@ -104,16 +104,16 @@ components:
           type: string
         student_id:
           type: number
-        GradeRecord:
+        gradeRecord:
           $ref: '#/components/schemas/GradeRecord'
       example:
         last_name: last_name
         student_id: 0.80082819046101150206595775671303272247314453125
         first_name: first_name
-        GradeRecord:
+        gradeRecord:
           grade: 6.0274563
           subject_name: subject_name
-    GradeRecord:
+    gradeRecord:
       type: object
       properties:
         subject_name:
