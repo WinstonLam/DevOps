@@ -47,5 +47,5 @@ def get_student_by_id(student_id):  # noqa: E501
     :rtype: Student
     """
     # if connexion.request.is_json:
-    return get_student_by_id(student_id)
+    return get_by_id(student_id)
     # return 500, 'error'
